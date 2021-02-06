@@ -61,7 +61,6 @@ public class OwnerServiceImpl implements OwnerService {
             ownerRepository.save(owner);
             return modelMapper.map(owner, OwnerDto.class);
         } catch (DataIntegrityViolationException e) {
-            // test
             throw new DuplicateRecordException("Duplicate record for: " + ownerDto);
         }
     }
